@@ -23,9 +23,18 @@
 		The Quote
 	</div>
 
-	<div id="todo">
-		<form onsubmit=""></form>
-		A Todo List
+	<div class="row justify-content-start">
+		<div class="col-4 todo-box" id="todo">
+			<form onsubmit="app.controllers.todoCtrl.addTodo(e)">
+				<div class="form-group">
+					<label for="todo">To do item here</label>
+					<input type="text" name="todo" class="form-control">
+				</div>
+				<button type="submit" class="btn btn-success">Add</button>
+				<button type="reset" class="btn btn-warningS">Clear</button>
+				<div class="col" id="todoList"></div>
+			</form>
+		</div>
 	</div>
 
 

@@ -8,8 +8,8 @@ function QuoteController() {
 		var template = `
 		<div class="jumbotron jumbotron-fluid centerFlex quote-box centered-text">
   			<div class="container">
-    			<h1 class="display-4"><em>&ldquo; ${quote.quote}&rdquo;</em></h1>
-    			<p class="lead">&mdash;${quote.author}</p>
+    			<p style="font-size:16px"><em>&ldquo; ${quote.quote}&rdquo;</em></p>
+    			<p style="font-size:16px">&mdash;${quote.author}</p>
   			</div>
 		</div>
 
