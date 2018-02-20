@@ -21,7 +21,7 @@ function TodoController() {
 			<div class="form-check">
 			<input class="form-check-input" type="checkbox" value="" id="todo">
 			<label class="form-check-label" for="todo">${todo.todo}</label>
-			<i onclick="app.controllers.todoCtrl.removeTodo('${todo.id}')" class="action remove fa fa-fw fa-md fa-trash text-red"></i>
+			<i onclick="app.controllers.todoCtrl.removeTodo('${todo.id}')" class="action remove fa fa-fw fa-md fa-trash"></i>
 			</div>	
 			`
 		})
@@ -41,9 +41,9 @@ function TodoController() {
 	}
 
 	this.removeTodo = function (todoId) {
-		debugger
 		todoService.removeTodo(todoId, drawTodos)
 	}
+
 
 	getTodos()
 }

@@ -9,12 +9,12 @@ function TodoService() {
 	this.getTodos = function getTodos(cb) {
 		$.get(baseUrl + 'todos')
 			.then(function (todos) {
-				todoList =  todos
+				todoList = todos
 				cb(todoList)
 			})
 	}
 
-	this.addTodo = function (formData,cb) {
+	this.addTodo = function (formData, cb) {
 		var todo = new Todo(formData)
 		$.post(baseUrl + 'todos', todo)
 			.then(res => {
@@ -23,31 +23,30 @@ function TodoService() {
 			})
 	}
 
-	this.toggleTodoSatus = function toggleTodoStatus(todoId, cb){
+	this.toggleTodoSatus = function toggleTodoStatus(todoId, cb) {
 		$.ajax({
 			method: 'PUT',
 			contentType: 'application/json',
-			url: baseUrl + '/' + todoId,
+			url: baseUrl + 'todos/' + todoId,
 			data: JSON.stringify(todoList)
 		})
 			.then(function (res) {
 				this.getTodos(cb)
 			})
+			
 	}
 
-	this.removeTodo = function removeTodo(todoId, cb) {
+	this.removeTodo = function removeTodo(todoId, callBack) {
 		$.ajax({
-			method: 'DELETE',
-			contentType: 'application/json',
-			url: baseUrl + '/' + todoId,
-			data: JSON.stringify(todoList)
+			url: baseUrl + 'todos/' + todoId,
+			method: 'DELETE'
 		})
-			.then(function (res) {
-				this.getTodos(cb)
-		})
+			.then(res => {
+				this.getTodos(callBack)
+			})
 
 
-		
+
 	}
 
 }
