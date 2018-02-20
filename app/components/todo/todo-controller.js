@@ -42,7 +42,7 @@ function TodoController() {
 
 	this.removeTodo = function (todoId) {
 		debugger
-		todoService.removeTodo(todoId, getTodos)
+		todoService.removeTodo(todoId, drawTodos)
 	}
 
 	getTodos()
